@@ -112,8 +112,8 @@ const letterSections = [
 ];
 
 const videoList = [
-  '/first.mp4', // <-- Place first.mp4 in your public folder
-  '/second.mp4' // <-- Place second.mp4 in your public folder
+  import.meta.env.VITE_VIDEO_ONE_URL,
+  import.meta.env.VITE_VIDEO_TWO_URL,
 ];
 
 const LoveLetter = () => {
