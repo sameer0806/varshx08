@@ -159,33 +159,7 @@ const LoveLetter = () => {
     }
   };
 
-  // Show videos for surprise
-  if (showSurprise && showVideos) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 to-rose-200">
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-40 w-full flex justify-center px-2">
-          <div className="date-badge rounded-full px-4 py-2 shadow-lg max-w-xs w-full flex justify-center">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-pink-600" />
-              <span className="font-playfair text-sm font-semibold text-pink-700">
-                DEC 1 2024
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="mb-4 text-center mt-16 sm:mt-24">
-          <p className="font-dancing text-2xl text-pink-600 mb-2">Hehehehe 😘😋❤️...</p>
-        </div>
-        <video
-          src={videoList[currentVideo]}
-          controls
-          autoPlay
-          onEnded={handleVideoEnded}
-          className="rounded-2xl shadow-2xl max-w-full w-[90vw] max-h-[60vh] border-4 border-pink-200"
-        />
-      </div>
-    );
-  }
+  
 
 // ...existing code...
 
@@ -260,13 +234,6 @@ if (showLetter) {
               <span className="font-playfair text-sm sm:text-lg font-semibold">6 Months Anniversary</span>
               <Heart className="animate-heart-pulse w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" />
             </div>
-            <Button
-              onClick={handleSurprise}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-pink-400 hover:from-yellow-500 hover:to-pink-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg font-playfair text-base sm:text-lg font-semibold transition-all duration-300"
-            >
-              <GiftIcon className="w-5 h-5" />
-              Surprise!
-            </Button>
           </div>
         </div>
       </div>
