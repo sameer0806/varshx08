@@ -55,7 +55,7 @@ const letterSections = [
     className: "text-base sm:text-lg md:text-xl font-crimson leading-relaxed mb-6 sm:mb-8 text-gray-700"
   },
   {
-    text: "The way I get upset over little things,\nthe way you do everything to make sure everything is alright,\nthe way I patiently listen to your talks\n(they're blessings to my ears anyways) —",
+    text: "The way I get upset over little things,\nthe way you do everything to make sure everything is alright,\nthe way I patiently listen to your talks\n(they're blessings to my ears anyways) —\nit's all so special.",
     delay: 6000,
     className: "text-base sm:text-lg md:text-xl font-crimson leading-relaxed mb-4 sm:mb-6 text-gray-700 whitespace-pre-line"
   },
@@ -68,6 +68,26 @@ const letterSections = [
     text: "I love everything about you.\nEvery single cell of you.",
     delay: 8000,
     className: "text-lg sm:text-xl md:text-2xl font-playfair text-center mb-6 sm:mb-8 text-pink-700 whitespace-pre-line"
+  },
+  {
+    text: `Your eyes are something that I’m never tired of seeing,
+Your body is something — ugh!!! Words fall short in describing,
+Like art that moves, like poetry that breathes.
+
+Your smile makes my day,
+Every time you look at me,
+My heart — it picks up pace,
+As if the world slows down just to admire your face.
+
+The way you tuck your hair behind your ear,
+Or laugh without a care,
+Like sunshine spilling through the morning air.
+You’re a melody I never want to end,
+
+You’re not just beautiful — you’re everything rare,
+A dream that walked in, unaware.`,
+    delay: 8500,
+    className: "text-base sm:text-lg md:text-xl font-playfair italic leading-relaxed mb-6 sm:mb-8 text-rose-700 whitespace-pre-line"
   },
   {
     text: "Thank you so much for putting your trust in me.",
@@ -159,91 +179,82 @@ const LoveLetter = () => {
     }
   };
 
-  
-
-// ...existing code...
-
-// Show the letter
-if (showLetter) {
-  return (
-    <div className="min-h-screen relative overflow-hidden">
-      <div className="fluid-gradient-bg"></div>
-      {/* Responsive pin-style date badge: absolute on desktop, fixed on small screens */}
-      <div
-        className="
-          z-50
-          absolute top-4 left-4
-          sm:absolute sm:top-4 sm:left-4
-          xs:fixed xs:top-2 xs:left-1/2 xs:-translate-x-1/2
-        "
-        style={{
-          // Use fixed positioning on small screens
-          position: window.innerWidth < 640 ? 'fixed' : 'absolute'
-        }}
-      >
-        <div className="bg-white/80 border border-pink-200 rounded-full px-4 py-2 shadow-md flex items-center gap-2 max-w-[90vw]">
-          <Calendar className="w-4 h-4 text-pink-600" />
-          <span className="font-playfair text-sm font-semibold text-pink-700 whitespace-nowrap">
-            13th June 2025
-          </span>
+  // Show the letter
+  if (showLetter) {
+    return (
+      <div className="min-h-screen relative overflow-hidden">
+        <div className="fluid-gradient-bg"></div>
+        {/* Responsive pin-style date badge: absolute on desktop, fixed on small screens */}
+        <div
+          className="
+            z-50
+            absolute top-4 left-4
+            sm:absolute sm:top-4 sm:left-4
+            xs:fixed xs:top-2 xs:left-1/2 xs:-translate-x-1/2
+          "
+          style={{
+            position: window.innerWidth < 640 ? 'fixed' : 'absolute'
+          }}
+        >
+          <div className="bg-white/80 border border-pink-200 rounded-full px-4 py-2 shadow-md flex items-center gap-2 max-w-[90vw]">
+            <Calendar className="w-4 h-4 text-pink-600" />
+            <span className="font-playfair text-sm font-semibold text-pink-700 whitespace-nowrap">
+              13th June 2025
+            </span>
+          </div>
         </div>
-      </div>
-      {/* Floating hearts in background */}
-      {Array.from({ length: 25 }, (_, i) => (
-        <FloatingHeart key={i} delay={i * 0.4} />
-      ))}
-      {Array.from({ length: 30 }, (_, i) => (
-        <FloatingParticle key={i} delay={i * 0.3} />
-      ))}
-      {/* Floating hearts on the letter */}
-      <div className="absolute inset-0 pointer-events-none z-30">
-        {Array.from({ length: 10 }, (_, i) => (
-          <FloatingHeart key={i} delay={i * 0.7 + 0.2} small />
+        {/* Floating hearts in background */}
+        {Array.from({ length: 25 }, (_, i) => (
+          <FloatingHeart key={i} delay={i * 0.4} />
         ))}
-      </div>
-      <div className="container mx-auto mobile-padding py-8 sm:py-12 relative z-40">
-        <div className="max-w-4xl mx-auto">
-          <div className="letter-card glass-bg rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-16 relative overflow-hidden">
-            {/* Extra floating hearts inside the letter */}
-            <div className="absolute inset-0 pointer-events-none z-10">
-              {Array.from({ length: 8 }, (_, i) => (
-                <FloatingHeart key={i} delay={i * 0.9 + 0.5} small />
-              ))}
+        {Array.from({ length: 30 }, (_, i) => (
+          <FloatingParticle key={i} delay={i * 0.3} />
+        ))}
+        {/* Floating hearts on the letter */}
+        <div className="absolute inset-0 pointer-events-none z-30">
+          {Array.from({ length: 10 }, (_, i) => (
+            <FloatingHeart key={i} delay={i * 0.7 + 0.2} small />
+          ))}
+        </div>
+        <div className="container mx-auto mobile-padding py-8 sm:py-12 relative z-40">
+          <div className="max-w-4xl mx-auto">
+            <div className="letter-card glass-bg rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-16 relative overflow-hidden">
+              {/* Extra floating hearts inside the letter */}
+              <div className="absolute inset-0 pointer-events-none z-10">
+                {Array.from({ length: 8 }, (_, i) => (
+                  <FloatingHeart key={i} delay={i * 0.9 + 0.5} small />
+                ))}
+              </div>
+              <div className="relative z-20">
+                {letterSections.map((section, index) => (
+                  <div
+                    key={index}
+                    className={`glow-text ${section.className} transition-all duration-1000 ${
+                      isVisible && index <= currentSection
+                        ? `opacity-100 ${sectionAnimations[index % sectionAnimations.length]}`
+                        : 'opacity-0'
+                    }`}
+                    style={{
+                      animationFillMode: 'forwards'
+                    }}
+                  >
+                    {section.text}
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="relative z-20">
-              {letterSections.map((section, index) => (
-                <div
-                  key={index}
-                  className={`glow-text ${section.className} transition-all duration-1000 ${
-                    isVisible && index <= currentSection
-                      ? `opacity-100 ${sectionAnimations[index % sectionAnimations.length]}`
-                      : 'opacity-0'
-                  }`}
-                  style={{
-                    animationFillMode: 'forwards'
-                  }}
-                >
-                  {section.text}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="mt-8 sm:mt-12 text-center animate-fade-in flex flex-col items-center gap-4" style={{ animationDelay: '17s' }}>
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
-              <Heart className="animate-heart-pulse w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" />
-              <span className="font-playfair text-sm sm:text-lg font-semibold">6 Months Anniversary</span>
-              <Heart className="animate-heart-pulse w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" />
+            <div className="mt-8 sm:mt-12 text-center animate-fade-in flex flex-col items-center gap-4" style={{ animationDelay: '17s' }}>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg transform hover:scale-105 transition-transform">
+                <Heart className="animate-heart-pulse w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" />
+                <span className="font-playfair text-sm sm:text-lg font-semibold">6 Months Anniversary</span>
+                <Heart className="animate-heart-pulse w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-// ...existing code...
-
-// ...existing code...
+    );
+  }
 
   // Intro page
   return (
@@ -284,7 +295,7 @@ if (showLetter) {
             <div className="flex justify-center">
               <Button
                 onClick={handleOpenLetter}
-                className="relative bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-2xl font-dancing shadow-lg transform hover:scale-105 transition-all duration-300"
+                className="relative bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-2xl font-dancing"
               >
                 <span className="absolute left-2 -top-2 animate-sparkle">
                   <Sparkles className="text-yellow-400 w-6 h-6" />
